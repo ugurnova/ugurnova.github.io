@@ -87,11 +87,11 @@
       text-align: center;
       padding: 4rem 1rem;
       color: #fff;
-      /* Gradient overlay with background image */
+      /* Darker gradient overlay with background image */
       background:
         linear-gradient(
-          rgba(0, 165, 222, 0.6),
-          rgba(0, 201, 121, 0.6)
+          rgba(0, 165, 222, 0.8),  /* Increased opacity to 0.8 */
+          rgba(0, 201, 121, 0.8)   /* Increased opacity to 0.8 */
         ),
         url("https://images.unsplash.com/photo-1581091870621-88ec6abb8b3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80")
           center/cover no-repeat;
@@ -359,36 +359,35 @@
       <div>
         <i class="fas fa-map-marker-alt"></i>
         <p>
-          18 Bank St. Suite 1F<br>
+          18 Bank St. Suite 1<br>
           Summit, NJ 07901
         </p>
       </div>
-      <div>
+
+
+      <!-- <div>
         <i class="fas fa-phone-alt"></i>
         <p>(617) 329-5432</p>
-      </div>
+      </div> -->
+
+
     </div>
 
     <!-- Contact Form -->
-    <form onsubmit="handleSubmit(event)">
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        required
-      />
-      <textarea
-        name="message"
-        rows="5"
-        placeholder="Message..."
-        required
-      ></textarea>
+    <!-- Uses mailto: action so that form data goes to info@novarcus.com -->
+    <!-- modify this form HTML and place wherever you want your form -->
+    <form
+      action="https://formspree.io/f/mbllpoql"
+      method="POST"
+    >
+      <!-- Your form fields -->
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Message" required></textarea>
+
+      <!-- Hidden redirect field -->
+      <input type="hidden" name="_next" value="https://novarcus.com/thank-you.html" />
+
       <button type="submit">Send</button>
     </form>
   </section>
@@ -397,14 +396,5 @@
   <footer>
     <p>&copy; 2025 Novarcus. All Rights Reserved.</p>
   </footer>
-
-  <!-- Simple JavaScript for Form Handling -->
-  <script>
-    function handleSubmit(event) {
-      event.preventDefault();
-      alert('Thank you for your message! We will get back to you soon.');
-      event.target.reset();
-    }
-  </script>
 </body>
 </html>
