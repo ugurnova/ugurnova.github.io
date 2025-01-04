@@ -29,7 +29,7 @@
       --brand-gradient-end:   #00C979; /* Green-ish from the logo */
       --brand-teal:          #00AA9D;  /* A teal accent color */
       --dark-color:          #333;
-      --light-bg:            #f8f9fa;
+      --light-bg:            #ffffff;  /* Entire background now white */
       --light-text:          #f1f1f1;
       --medium-text:         #666;
     }
@@ -44,7 +44,7 @@
       font-family: 'Inter', sans-serif;
     }
     body {
-      background-color: var(--light-bg);
+      background-color: var(--light-bg); /* white */
       color: var(--dark-color);
       line-height: 1.6;
     }
@@ -86,15 +86,9 @@
       align-items: center;
       text-align: center;
       padding: 4rem 1rem;
-      color: #fff;
-      /* Darker gradient overlay with background image */
-      background:
-        linear-gradient(
-          rgba(0, 165, 222, 0.8),  /* Increased opacity to 0.8 */
-          rgba(0, 201, 121, 0.8)   /* Increased opacity to 0.8 */
-        ),
-        url("https://images.unsplash.com/photo-1581091870621-88ec6abb8b3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2850&q=80")
-          center/cover no-repeat;
+      /* Removed background image & gradient to keep it white */
+      background-color: #fff;
+      color: var(--dark-color);
     }
     .hero-section h1 {
       font-size: 2.5rem;
@@ -103,11 +97,11 @@
     .hero-section p {
       max-width: 600px;
       font-size: 1.1rem;
+      margin-bottom: 2rem;
     }
     .hero-section button {
-      margin-top: 2rem;
-      background-color: #fff;
-      color: var(--dark-color);
+      background-color: var(--brand-teal);
+      color: #fff;
       border: none;
       padding: 1rem 2rem;
       font-size: 1rem;
@@ -117,8 +111,7 @@
       transition: background-color 0.2s ease;
     }
     .hero-section button:hover {
-      background-color: var(--brand-teal);
-      color: #fff;
+      background-color: #008f8c;
     }
 
     /*------------------------------------
@@ -126,6 +119,7 @@
     ------------------------------------*/
     #services {
       padding: 4rem 1rem;
+      background-color: #fff;
     }
     #services h2 {
       font-size: 2rem;
@@ -163,7 +157,7 @@
     ------------------------------------*/
     #about {
       padding: 4rem 1rem;
-      background-color: #e9ecef;
+      background-color: #fff; /* was #e9ecef before */
       text-align: center;
     }
     #about h2 {
@@ -270,8 +264,10 @@
     <!-- LOGO -->
     <div style="display: flex; align-items: center;">
       <!-- Replace PATH_TO_LOGO with your actual image file or URL -->
-      <img 
-        src="Logo.png" alt="Novarcus" style="height: 50px; margin-right: 1rem;"
+      <img
+        src="Logo.png"
+        alt="Novarcus"
+        style="height: 50px; margin-right: 1rem;"
       />
     </div>
 
@@ -361,19 +357,13 @@
           Summit, NJ 07901
         </p>
       </div>
-
-
       <!-- <div>
         <i class="fas fa-phone-alt"></i>
         <p>(617) 329-5432</p>
       </div> -->
-
-
     </div>
 
     <!-- Contact Form -->
-    <!-- Uses mailto: action so that form data goes to info@novarcus.com -->
-    <!-- modify this form HTML and place wherever you want your form -->
     <form
       action="https://formspree.io/f/mbllpoql"
       method="POST"
@@ -384,7 +374,11 @@
       <textarea name="message" placeholder="Message" required></textarea>
 
       <!-- Hidden redirect field -->
-      <input type="hidden" name="_next" value="https://ugurnova.github.io/thank-you.html">
+      <input
+        type="hidden"
+        name="_next"
+        value="https://ugurnova.github.io/thank-you.html"
+      />
 
       <button type="submit">Send</button>
     </form>
